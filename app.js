@@ -1,6 +1,4 @@
-// Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the necessary elements
   var form = document.querySelector("form");
   var successMessage = document.getElementById("success-message-block");
   var emailBox = document.getElementById("email-box");
@@ -19,10 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!validateEmail(email)) {
       // Display error message for invalid email address
       emailBox.classList.add("invalid");
-      emailBox.insertAdjacentHTML(
-        "beforebegin",
-        '<p class="error-msg">Invalid email address</p>'
-      );
+      emailBox.style.border = "2px solid red";
+    //   emailBox.insertAdjacentHTML(
+    //     "beforebegin",
+    //     '<p class="error-msg">Invalid email address</p>'
+    //   );
       return;
     }
 
@@ -32,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update user email in success message
     userEmail.textContent = email;
+    userEmail.style.fontWeight = '700';
 
     // Reset email box value and remove error styling and message
     emailBox.value = "";
