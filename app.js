@@ -5,54 +5,38 @@ document.addEventListener("DOMContentLoaded", function () {
   var userEmail = document.getElementById("user-email");
   var dismissButton = document.getElementById("dismiss-button");
 
-  // Initially hide the success message
   successMessage.style.display = "none";
 
   // Add submit event listener to the form
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
-    // Validate email address
     var email = emailBox.value;
     if (!validateEmail(email)) {
-      // Display error message for invalid email address
       emailBox.classList.add("invalid");
       emailBox.style.border = "2px solid red";
-    //   emailBox.insertAdjacentHTML(
-    //     "beforebegin",
-    //     '<p class="error-msg">Invalid email address</p>'
-    //   );
       return;
     }
 
     // Hide the sign-in block and display the success message
     document.getElementById("sign-in-block").style.display = "none";
     successMessage.style.display = "block";
-
     // Update user email in success message
     userEmail.textContent = email;
     userEmail.style.fontWeight = '700';
 
-    // Reset email box value and remove error styling and message
+    // Reset email box value and remove error styling
     emailBox.value = "";
-    emailBox.classList.remove("invalid");
-    var errorMessage = emailBox.parentElement.querySelector(".error-msg");
-    if (errorMessage) {
-      errorMessage.remove();
-    }
+    emailBox.style.border = "1px solid grey";
   });
 
-  // Add click event listener to the dismiss button
   dismissButton.addEventListener("click", function () {
-    // Hide the success message
     successMessage.style.display = "none";
-    // Show the sign-in block again
     document.getElementById("sign-in-block").style.display = "block";
   });
 
   // Email validation function
   function validateEmail(email) {
-    // Simple email validation regex
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
