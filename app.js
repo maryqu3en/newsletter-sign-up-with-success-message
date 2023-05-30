@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector("form");
-  var successMessage = document.getElementById("success-message-block");
-  var emailBox = document.getElementById("email-box");
-  var userEmail = document.getElementById("user-email");
-  var dismissButton = document.getElementById("dismiss-button");
+  let form = document.querySelector("form");
+  let successMessage = document.getElementById("success-message-block");
+  let emailBox = document.getElementById("email-box");
+  let userEmail = document.getElementById("user-email");
+  let dismissButton = document.getElementById("dismiss-button");
 
   successMessage.style.display = "none";
 
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
-    var email = emailBox.value;
+    let email = emailBox.value;
     if (!validateEmail(email)) {
       emailBox.classList.add("invalid");
       emailBox.style.border = "2px solid red";
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Email validation function
   function validateEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 });
