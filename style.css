@@ -248,6 +248,6 @@ label {
   }
 
   #dismiss-button {
-    margin-bottom: -190px;
+    margin-bottom: none;
   }
 }
