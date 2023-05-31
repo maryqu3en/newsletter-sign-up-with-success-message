@@ -42,7 +42,6 @@ body {
   color: var(--dark-slate-grey);
 }
 
-
 #img-container img {
   height: 100%;
   width: auto;
@@ -218,8 +217,6 @@ label {
     font-size: 1.8rem;
   }
 
-
-
   #email-box,
   #subscribe-button {
     height: 30px;
@@ -245,9 +242,5 @@ label {
   .success-pic {
     display: block;
     height: 50px;
-  }
-
-  #dismiss-button {
-    margin-bottom: -190px;
   }
 }
